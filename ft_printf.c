@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:02:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/21 01:56:45 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/21 02:49:42 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_printf(const char *format, ...)
 	char	*old_address;
 	int		len;
 	int		i;
-	char	*int_d;
 	char	*str_s;
 	char	*c_c;
 
@@ -28,14 +27,16 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	while (p[i] != '\0')
 	{
-		if (ft_strncmp(&p[i], "%d", 2) == 0)
-		{
-			old_address = p;
-			int_d = ft_itoa(va_arg(ap, int));
-			p = str_replace(old_address, "%d", int_d);
-			free(old_address);
-			free(int_d);
-		}
+		if (is_decimal(&p[i]))
+			p = replace_decimal(p, va_arg(ap, int));
+		// if (ft_strnstr(&p[i], "%d", 2))
+		// {
+		// 	old_address = p;
+		// 	int_d = ft_itoa(va_arg(ap, int));
+		// 	p = str_replace(old_address, "%d", int_d);
+		// 	free(old_address);
+		// 	free(int_d);
+		// }
 		if (ft_strncmp(&p[i], "%s", 2) == 0)
 		{
 			old_address = p;
