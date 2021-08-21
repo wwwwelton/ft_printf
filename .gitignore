@@ -1,3 +1,5 @@
 a.out
 .vscode
 main.c
+libft.a
+libft.h
