@@ -6,11 +6,17 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/21 01:54:21 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/21 02:44:02 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	free_ptr(char **ptr)
+{
+	free(*ptr);
+	*ptr = NULL;
+}
 
 char	*str_replace(char *str, char *old_word, char *new_word)
 {
