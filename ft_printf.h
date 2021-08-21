@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/21 02:48:27 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/21 16:39:50 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ char	*str_replace(char *str, char *old_word, char *new_word);
 
 size_t	is_decimal(char *format);
 char	*replace_decimal(char *format, int value);
+
+size_t	is_string(char *format);
+char	*replace_string(char *format, char *value);
 
 #endif
