@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 09:27:42 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 14:53:14 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,27 @@ void	free_ptr(char **ptr)
 	*ptr = NULL;
 }
 
-int	str_replace(char **str, char *old_word, char *new_word)
+char	*str_replace(const char *str, char *old_word, char *new_word)
 {
-	char	*buffer;
-	char	*p;
-	int		len;
+	char	*new_str;
+	char	*ptr;
+	int		total_size;
 	int		i;
 
-	len = ft_strlen(*str) - ft_strlen(old_word) + ft_strlen(new_word) + 1;
-	buffer = (char *)ft_calloc(len, sizeof(char *));
-	if (!buffer)
-		return (0);
+	total_size = ft_strlen(str) - ft_strlen(old_word) + ft_strlen(new_word) + 1;
+	new_str = (char *)ft_calloc(total_size, sizeof(char *));
+	if (!new_str)
+		return (NULL);
 	i = 0;
-	p = ft_strnstr(*str + i, old_word, ft_strlen(*str));
-	if (p)
+	ptr = ft_strnstr(str + i, old_word, ft_strlen(str));
+	if (ptr)
 	{
-		ft_strlcpy(buffer + ft_strlen(buffer), *str + i, (p - *str) - i + 1);
-		ft_strlcat(buffer, new_word, len);
-		i = (p - *str) + ft_strlen(old_word);
+		ft_strlcpy(new_str + ft_strlen(new_str), str + i, (ptr - str) - i + 1);
+		ft_strlcat(new_str, new_word, total_size);
+		i = (ptr - str) + ft_strlen(old_word);
 	}
-	ft_strlcat(buffer, *str + i, len);
-	free_ptr(str);
-	*str = buffer;
-	return (len);
+	ft_strlcat(new_str, str + i, total_size);
+	return (new_str);
 }
 
 int	ft_print_parser_fd(const char *format)
