@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_replace_type.c                                  :+:      :+:    :+:   */
+/*   ft_replace_flags.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char	*ft_replace_type(const char *format, va_list *ap)
+char	*ft_replace_flags(const char *format, va_list *ap)
 {
 	char	*fmt;
 
