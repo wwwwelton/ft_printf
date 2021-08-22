@@ -6,13 +6,13 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/21 15:55:29 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/21 21:50:11 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	is_string(char *format)
+size_t	is_string(const char *format)
 {
 	if (!format || !*format)
 		return (0);

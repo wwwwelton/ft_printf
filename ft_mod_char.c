@@ -6,17 +6,17 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/21 17:15:34 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/21 21:49:10 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	is_char(char *format)
+size_t	is_char(const char *format)
 {
 	if (!format || !*format)
 		return (0);
-	if (ft_strnstr(format, "%c", 2))
+	if (ft_strnstr((char *)format, "%c", 2))
 		return (1);
 	return (0);
 }

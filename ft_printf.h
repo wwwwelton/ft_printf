@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/21 16:43:14 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/21 21:46:19 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int		ft_printf(const char *format, ...);
 void	free_ptr(char **ptr);
 char	*str_replace(char *str, char *old_word, char *new_word);
 
-size_t	is_decimal(char *format);
+size_t	is_decimal(const char *format);
 char	*replace_decimal(char *format, int value);
 
-size_t	is_string(char *format);
+size_t	is_string(const char *format);
 char	*replace_string(char *format, char *value);
 
-size_t	is_char(char *format);
+size_t	is_char(const char *format);
 char	*replace_char(char *format, int value);
 
 #endif
