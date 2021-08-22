@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 02:07:31 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 04:52:59 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,10 @@ size_t	is_decimal(const char *format)
 
 char	*replace_decimal(char *format, int value)
 {
-	char	*old_address;
 	char	*decimal;
 
-	old_address = format;
 	decimal = ft_itoa(value);
-	format = str_replace(old_address, "%d", decimal);
-	free_ptr(&old_address);
+	str_replace(&format, "%d", decimal);
 	free_ptr(&decimal);
 	return (format);
 }
