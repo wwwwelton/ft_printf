@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:02:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/21 23:59:10 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 01:33:59 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_printf(const char *format, ...)
 			fmt = replace_string(fmt, va_arg(ap, char *));
 		else if (is_decimal(format))
 			fmt = replace_decimal(fmt, va_arg(ap, int));
+		else if (is_percent(format))
+			fmt = replace_percent(fmt);
 		format++;
 	}
 	va_end(ap);

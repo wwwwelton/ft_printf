@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/21 21:46:19 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 01:36:06 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ char	*replace_string(char *format, char *value);
 
 size_t	is_char(const char *format);
 char	*replace_char(char *format, int value);
+
+size_t	is_percent(const char *format);
+char	*replace_percent(char *format);
 
 #endif
