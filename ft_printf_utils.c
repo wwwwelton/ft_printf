@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 08:41:04 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 09:27:42 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,6 @@ int	str_replace(char **str, char *old_word, char *new_word)
 	return (len);
 }
 
-int	print_pattern_fd(const char **format, char *pattern, int *bytes_write)
-{
-	if (ft_strnstr(*format, pattern, ft_strlen(pattern)))
-	{
-		*bytes_write += write(FD, "\0", 1);
-		*format += ft_strlen(pattern);
-		return (1);
-	}
-	return (0);
-}
-
 int	ft_print_parser_fd(const char *format)
 {
 	int	bytes_write;
@@ -61,8 +50,12 @@ int	ft_print_parser_fd(const char *format)
 	bytes_write = 0;
 	while (*format)
 	{
-		if (print_pattern_fd(&format, NULL_PATTERN, &bytes_write))
+		if (ft_strnstr(format, NULL_PATTERN, 9))
+		{
+			bytes_write += write(FD, "\0", 1);
+			format += 9;
 			continue ;
+		}
 		if (ft_strnstr(format, PERCENT_PATTERN, 10))
 		{
 			bytes_write += write(FD, "%", 1);
