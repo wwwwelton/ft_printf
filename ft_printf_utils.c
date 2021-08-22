@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 07:45:40 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 08:41:04 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	str_replace(char **str, char *old_word, char *new_word)
 
 	len = ft_strlen(*str) - ft_strlen(old_word) + ft_strlen(new_word) + 1;
 	buffer = (char *)ft_calloc(len, sizeof(char *));
+	if (!buffer)
+		return (0);
 	i = 0;
 	p = ft_strnstr(*str + i, old_word, ft_strlen(*str));
 	if (p)
@@ -41,58 +43,34 @@ int	str_replace(char **str, char *old_word, char *new_word)
 	return (len);
 }
 
-int	ft_print_parser_fd(const char *format, int fd)
+int	print_pattern_fd(const char **format, char *pattern, int *bytes_write)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (format[j])
+	if (ft_strnstr(*format, pattern, ft_strlen(pattern)))
 	{
-		if (ft_strnstr(&format[j], NULL_PATTERN, 9))
-		{
-			i += write(fd, "\0", 1);
-			j += 9;
-			continue ;
-		}
-		if (ft_strnstr(&format[j], PERCENT_PATTERN, 10))
-		{
-			i += write(fd, "%", 1);
-			j += 10;
-			continue ;
-		}
-		i += write(fd, &format[j], 1);
-		j++;
+		*bytes_write += write(FD, "\0", 1);
+		*format += ft_strlen(pattern);
+		return (1);
 	}
-	return (i);
+	return (0);
 }
 
-// char	*str_replace(char *str, char *old_word, char *new_word)
-// {
-// 	char	*result;
-// 	char	*result_start;
-// 	size_t	replaced;
+int	ft_print_parser_fd(const char *format)
+{
+	int	bytes_write;
 
-// 	result = (char *)ft_calloc((ft_strlen(str) - ft_strlen(old_word)
-// 				+ ft_strlen(new_word) + 1), sizeof(char *));
-// 	result_start = result;
-// 	replaced = 0;
-// 	while (*str)
-// 	{
-// 		if (!ft_strncmp (str, old_word, ft_strlen(old_word)) && !replaced)
-// 		{
-// 			ft_strlcat (result, new_word, ft_strlen(new_word) + 1);
-// 			str += ft_strlen(old_word);
-// 			result += ft_strlen(new_word);
-// 			replaced = 1;
-// 		}
-// 		else
-// 		{
-// 			*result = *str;
-// 			result++;
-// 			str++;
-// 		}
-// 	}
-// 	return (result_start);
-// }
+	bytes_write = 0;
+	while (*format)
+	{
+		if (print_pattern_fd(&format, NULL_PATTERN, &bytes_write))
+			continue ;
+		if (ft_strnstr(format, PERCENT_PATTERN, 10))
+		{
+			bytes_write += write(FD, "%", 1);
+			format += 10;
+			continue ;
+		}
+		bytes_write += write(FD, format, 1);
+		format++;
+	}
+	return (bytes_write);
+}
