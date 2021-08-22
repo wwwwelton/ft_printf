@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 04:54:35 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 07:45:40 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,33 @@ int	str_replace(char **str, char *old_word, char *new_word)
 	free_ptr(str);
 	*str = buffer;
 	return (len);
+}
+
+int	ft_print_parser_fd(const char *format, int fd)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (format[j])
+	{
+		if (ft_strnstr(&format[j], NULL_PATTERN, 9))
+		{
+			i += write(fd, "\0", 1);
+			j += 9;
+			continue ;
+		}
+		if (ft_strnstr(&format[j], PERCENT_PATTERN, 10))
+		{
+			i += write(fd, "%", 1);
+			j += 10;
+			continue ;
+		}
+		i += write(fd, &format[j], 1);
+		j++;
+	}
+	return (i);
 }
 
 // char	*str_replace(char *str, char *old_word, char *new_word)
