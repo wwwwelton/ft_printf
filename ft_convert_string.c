@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mod_string.c                                    :+:      :+:    :+:   */
+/*   ft_convert_string.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/21 21:50:11 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 02:07:22 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ char	*replace_string(char *format, char *value)
 	char	*old_address;
 	char	*string;
 
-	if (!format || !*format)
-		return (NULL);
 	old_address = format;
 	string = ft_strdup(value);
 	format = str_replace(old_address, "%s", string);

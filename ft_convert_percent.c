@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 01:41:09 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 02:07:26 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ char	*replace_percent(char *format)
 	char	percent_parse[2];
 	char	*percent;
 
-	if (!format || !*format)
-		return (NULL);
 	old_address = format;
 	percent_parse[0] = '%';
 	percent_parse[1] = '\0';

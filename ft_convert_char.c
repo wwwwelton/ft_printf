@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 01:47:26 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 02:07:36 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ char	*replace_char(char *format, int value)
 	char	ch_parse[2];
 	char	*ch;
 
-	if (!format || !*format)
-		return (NULL);
 	old_address = format;
 	if (value == 0)
 		ch_parse[0] = '#';
