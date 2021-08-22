@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 02:07:36 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 03:03:23 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ char	*replace_char(char *format, int value)
 
 	old_address = format;
 	if (value == 0)
-		ch_parse[0] = '#';
+		ch = ft_strdup(NULL_PATTERN);
 	else
+	{
 		ch_parse[0] = value;
-	ch_parse[1] = '\0';
-	ch = ft_strdup(ch_parse);
+		ch_parse[1] = '\0';
+		ch = ft_strdup(ch_parse);
+	}
 	format = str_replace(old_address, "%c", ch);
 	free_ptr(&old_address);
 	free_ptr(&ch);

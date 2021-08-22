@@ -6,12 +6,14 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 02:31:43 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/22 03:06:50 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
+# define NULL_PATTERN "____[0x0]"
 
 # include "libft.h"
 # include <stdarg.h>
