@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 14:33:28 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/23 04:48:03 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,12 @@
 
 # include "libft.h"
 # include <stdarg.h>
-# include <stdio.h>
-# include <string.h>
 
 int		ft_printf(const char *format, ...);
 void	free_ptr(char **ptr);
 char	*str_replace(const char *str, char *old_word, char *new_word);
 char	*ft_replace_flags(const char *format, va_list *ap);
 int		ft_print_parser_fd(const char *format);
-int		print_pattern_fd(const char **format, char *pattern, int *bytes_write);
 
 size_t	is_decimal(const char *format);
 char	*replace_decimal(char *format, int value);
