@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 14:53:14 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/23 22:09:30 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,24 @@ int	ft_print_parser_fd(const char *format)
 		format++;
 	}
 	return (bytes_write);
+}
+
+void	ft_strrev(char *str)
+{
+	char	temp;
+	int		start;
+	int		end;
+
+	start = 0;
+	end = ft_strlen(str) - 1;
+	if (str[start] == '-')
+		start++;
+	while (str[start] && start < end)
+	{
+		temp = str[start];
+		str[start] = str[end];
+		str[end] = temp;
+		start++;
+		end--;
+	}
 }
