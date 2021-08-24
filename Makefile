@@ -4,9 +4,9 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 SOURCES			=	handler_char.c handler_decimal.c handler_integer.c
 SOURCES			+=	handler_percent.c handler_pointer.c
 SOURCES			+=	handler_string.c handler_u_hex.c
-SOURCES			+=	handler_u_int.c ft_printf.c ft_printf_utils.c
+SOURCES			+=	handler_u_int.c parse_u_int_hex.c
 SOURCES			+=	parse_flags.c parse_ch_dec_int.c
-SOURCES			+=	parse_u_int_hex.c
+SOURCES			+=	ft_printf_utils.c ft_printf.c
 
 OBJECTS			= 	$(SOURCES:.c=.o)
 
