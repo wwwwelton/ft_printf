@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 18:34:20 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 18:53:13 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 int		ft_printf(const char *format, ...);
 void	free_ptr(char **ptr);
 char	*str_replace(const char *str, char *old_word, char *new_word);
-char	*ft_replace_flags(const char *format, va_list *ap);
+char	*ft_parse_flags(const char *format, va_list *ap);
 int		ft_print_parser_fd(const char *format);
 
 char	*ft_char_tostr(char c);
@@ -37,9 +37,9 @@ size_t	is_integer(char type);
 char	*replace_integer(char *format, int value);
 
 size_t	is_ch_dec_int(char type);
-char	*replace_ch_dec_int(char *format, char type, int value);
-size_t	is_u_int_hex(char type);
-char	*replace_u_int_hex(char *format, char type, unsigned int value);
+char	*parse_ch_dec_int(char *format, char type, int value);
+size_t	is_un_int_hex(char type);
+char	*parse_un_int_hex(char *format, char type, unsigned int value);
 
 size_t	is_string(char type);
 char	*replace_string(char *format, char *value);

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_replace_flags.c                                 :+:      :+:    :+:   */
+/*   ft_parse_flags.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 18:14:32 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 18:52:54 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_replace_flags(const char *format, va_list *ap)
+char	*ft_parse_flags(const char *format, va_list *ap)
 {
 	char	*fmt;
 
@@ -27,9 +27,9 @@ char	*ft_replace_flags(const char *format, va_list *ap)
 			else if (is_pointer(*format))
 				fmt = replace_pointer(fmt, va_arg(*ap, unsigned long int));
 			else if (is_ch_dec_int(*format))
-				fmt = replace_ch_dec_int(fmt, *format, va_arg(*ap, int));
-			else if (is_u_int_hex(*format))
-				fmt = replace_u_int_hex(fmt, *format, va_arg(*ap, unsigned int));
+				fmt = parse_ch_dec_int(fmt, *format, va_arg(*ap, int));
+			else if (is_un_int_hex(*format))
+				fmt = parse_un_int_hex(fmt, *format, va_arg(*ap, unsigned int));
 			else if (is_percent(*format))
 				fmt = replace_percent(fmt);
 		}
