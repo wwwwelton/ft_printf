@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 03:50:45 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 17:55:23 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 static char	*u_xtoa(unsigned int n);
 
-size_t	is_u_hexadecimal(const char *format)
+size_t	is_u_hexadecimal(char type)
 {
-	if (!format || !*format)
-		return (0);
-	if (ft_strnstr(format, "%x", 2) || ft_strnstr(format, "%X", 2))
-		return (1);
-	return (0);
+	return (type == 'x' || type == 'X');
 }
 
 char	*replace_u_hexadecimal(char *format, unsigned int value)

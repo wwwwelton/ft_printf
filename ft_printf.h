@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 17:07:41 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 17:55:36 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,28 @@ char	*ft_char_tostr(char c);
 void	ft_strrev(char *str);
 void	ft_str_toupper(char *str);
 
-size_t	is_decimal(const char *format);
+size_t	is_decimal(char type);
 char	*replace_decimal(char *format, char type, int value);
 
-char	*replace_c_d_i(char *format, char type, int value);
+size_t	is_ch_dec_int(char type);
+char	*replace_ch_dec_int(char *format, char type, int value);
 
-size_t	is_string(const char *format);
+size_t	is_string(char type);
 char	*replace_string(char *format, char *value);
 
-size_t	is_char(const char *format);
+size_t	is_char(char type);
 char	*replace_char(char *format, int value);
 
-size_t	is_percent(const char *format);
+size_t	is_percent(char type);
 char	*replace_percent(char *format);
 
-size_t	is_uinteger(const char *format);
+size_t	is_uinteger(char type);
 char	*replace_uinteger(char *format, unsigned int value);
 
-size_t	is_u_hexadecimal(const char *format);
+size_t	is_u_hexadecimal(char type);
 char	*replace_u_hexadecimal(char *format, unsigned int value);
 
-size_t	is_pointer(const char *format);
+size_t	is_pointer(char type);
 char	*replace_pointer(char *format, unsigned long int value);
 
 #endif

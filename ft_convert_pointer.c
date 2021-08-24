@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 01:43:23 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 15:52:20 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 17:56:17 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 static char	*ul_ptoa(unsigned long int n);
 
-size_t	is_pointer(const char *format)
+size_t	is_pointer(char type)
 {
-	if (!format || !*format)
-		return (0);
-	if (ft_strnstr(format, "%p", 2))
-		return (1);
-	return (0);
+	return (type == 'p');
 }
 
 char	*replace_pointer(char *format, unsigned long int value)

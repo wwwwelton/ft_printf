@@ -6,19 +6,15 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 17:03:19 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 17:55:58 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	is_decimal(const char *format)
+size_t	is_decimal(char type)
 {
-	if (!format || !*format)
-		return (0);
-	if (ft_strnstr(format, "%d", 2) || ft_strnstr(format, "%i", 2))
-		return (1);
-	return (0);
+	return (type == 'd' || type == 'i');
 }
 
 char	*replace_decimal(char *format, char type, int value)

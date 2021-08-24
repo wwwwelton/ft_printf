@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 17:02:41 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 17:57:21 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ char	*ft_replace_flags(const char *format, va_list *ap)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == 's')
+			if (is_string(*format))
 				fmt = replace_string(fmt, va_arg(*ap, char *));
-			else if (*format == 'p')
+			else if (is_pointer(*format))
 				fmt = replace_pointer(fmt, va_arg(*ap, unsigned long int));
-			else if (*format == 'c' || *format == 'd' || *format == 'i')
-				fmt = replace_c_d_i(fmt, *format, va_arg(*ap, int));
-			else if (*format == 'u')
+			else if (is_ch_dec_int(*format))
+				fmt = replace_ch_dec_int(fmt, *format, va_arg(*ap, int));
+			else if (is_uinteger(*format))
 				fmt = replace_uinteger(fmt, va_arg(*ap, unsigned int));
-			else if (*format == 'x' || *format == 'X')
+			else if (is_u_hexadecimal(*format))
 				fmt = replace_u_hexadecimal(fmt, va_arg(*ap, unsigned int));
-			else if (*format == '%')
+			else if (is_percent(*format))
 				fmt = replace_percent(fmt);
 		}
 		format++;

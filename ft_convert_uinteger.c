@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 21:24:16 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/23 22:17:20 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 17:56:33 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 static char	*u_itoa(unsigned int n);
 
-size_t	is_uinteger(const char *format)
+size_t	is_uinteger(char type)
 {
-	if (!format || !*format)
-		return (0);
-	if (ft_strnstr(format, "%u", 2))
-		return (1);
-	return (0);
+	return (type == 'u');
 }
 
 char	*replace_uinteger(char *format, unsigned int value)

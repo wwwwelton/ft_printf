@@ -6,19 +6,15 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 16:36:01 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 17:55:48 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	is_char(const char *format)
+size_t	is_char(char type)
 {
-	if (!format || !*format)
-		return (0);
-	if (ft_strnstr((char *)format, "%c", 2))
-		return (1);
-	return (0);
+	return (type == 'c');
 }
 
 char	*replace_char(char *format, int value)
