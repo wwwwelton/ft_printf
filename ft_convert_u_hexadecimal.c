@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/23 23:29:05 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 03:50:45 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ static char	*u_xtoa(unsigned int n)
 	char			*res;
 	unsigned int	i;
 
-	base = ft_strdup("0123456789abcdef");
 	if (n == 0)
 		return (ft_strdup("0"));
+	base = ft_strdup("0123456789abcdef");
 	res = (char *)malloc(sizeof(char) * (u_count_digits(n) + 1));
 	if (!res)
 		return (NULL);
