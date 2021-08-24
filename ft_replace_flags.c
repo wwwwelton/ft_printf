@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_replace_flags.c                                  :+:      :+:    :+:   */
+/*   ft_replace_flags.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/22 05:22:52 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/23 22:17:46 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_replace_flags(const char *format, va_list *ap)
 			fmt = replace_decimal(fmt, va_arg(*ap, int));
 		else if (is_percent(format))
 			fmt = replace_percent(fmt);
+		else if (is_uinteger(format))
+			fmt = replace_uinteger(fmt, va_arg(*ap, unsigned int));
 		format++;
 	}
 	return (fmt);
