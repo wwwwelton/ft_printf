@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 16:35:15 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 16:49:29 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ char	*ft_char_tostr(char c)
 {
 	char	str[2];
 
+	if (c == '\0')
+		return (ft_strdup(""));
 	str[0] = c;
 	str[1] = '\0';
 	return (ft_strdup(str));
