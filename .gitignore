@@ -1,7 +1,7 @@
 a.out
 .vscode
 main.c
-libft.a
+*.a
 libft.h
 *.o
 printfTester
