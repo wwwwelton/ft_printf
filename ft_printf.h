@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 00:07:11 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 01:47:32 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,8 @@ char	*replace_uinteger(char *format, unsigned int value);
 
 size_t	is_u_hexadecimal(const char *format);
 char	*replace_u_hexadecimal(char *format, unsigned int value);
+
+size_t	is_pointer(const char *format);
+char	*replace_pointer(char *format, unsigned long int value);
 
 #endif
