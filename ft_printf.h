@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/23 22:21:04 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 00:05:04 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_replace_flags(const char *format, va_list *ap);
 int		ft_print_parser_fd(const char *format);
 
 void	ft_strrev(char *str);
+void	ft_str_toupper(char *str);
 
 size_t	is_decimal(const char *format);
 char	*replace_decimal(char *format, int value);
