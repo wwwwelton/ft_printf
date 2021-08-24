@@ -2,7 +2,6 @@ a.out
 .vscode
 main.c
 *.a
-libft.h
 *.o
 printfTester
 ft_printf_tester
