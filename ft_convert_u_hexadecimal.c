@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 17:55:23 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 18:19:19 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,19 @@ size_t	is_u_hexadecimal(char type)
 	return (type == 'x' || type == 'X');
 }
 
-char	*replace_u_hexadecimal(char *format, unsigned int value)
+char	*replace_u_hexadecimal(char *format, char type, int value)
 {
 	char	*old_adress;
 	char	*hexadecimal;
-	int		i;
 
 	old_adress = format;
 	hexadecimal = u_xtoa(value);
-	i = 0;
-	while (format[i])
+	if (type == 'x')
+		format = str_replace(old_adress, "%x", hexadecimal);
+	if (type == 'X')
 	{
-		if (format[i] == '%' && format[i + 1] == 'x')
-		{
-			format = str_replace(old_adress, "%x", hexadecimal);
-			break ;
-		}
-		if (format[i] == '%' && format[i + 1] == 'X')
-		{
-			ft_str_toupper(hexadecimal);
-			format = str_replace(old_adress, "%X", hexadecimal);
-			break ;
-		}
-		i++;
+		ft_str_toupper(hexadecimal);
+		format = str_replace(old_adress, "%X", hexadecimal);
 	}
 	free_ptr(&hexadecimal);
 	free_ptr(&old_adress);
