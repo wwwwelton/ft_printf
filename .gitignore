@@ -3,3 +3,6 @@ a.out
 main.c
 libft.a
 libft.h
+*.o
+printfTester
+ft_printf_tester
