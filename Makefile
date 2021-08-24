@@ -1,10 +1,10 @@
 LIBFT_PATH		=	./libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
-SOURCES			=	ft_convert_char.c ft_convert_decimal.c ft_convert_integer.c
-SOURCES			+=	ft_convert_percent.c ft_convert_pointer.c
-SOURCES			+=	ft_convert_string.c ft_convert_u_hexadecimal.c
-SOURCES			+=	ft_convert_uinteger.c ft_printf.c ft_printf_utils.c
+SOURCES			=	handler_char.c handler_decimal.c handler_integer.c
+SOURCES			+=	handler_percent.c handler_pointer.c
+SOURCES			+=	handler_string.c handler_u_hexadecimal.c
+SOURCES			+=	handler_uinteger.c ft_printf.c ft_printf_utils.c
 SOURCES			+=	ft_parse_flags.c ft_parse_ch_dec_int.c
 SOURCES			+=	ft_parse_un_int_hex.c
 
