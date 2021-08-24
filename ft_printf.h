@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 18:53:13 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 19:27:08 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ char	*replace_integer(char *format, int value);
 
 size_t	is_ch_dec_int(char type);
 char	*parse_ch_dec_int(char *format, char type, int value);
-size_t	is_un_int_hex(char type);
-char	*parse_un_int_hex(char *format, char type, unsigned int value);
+size_t	is_u_int_hex(char type);
+char	*parse_u_int_hex(char *format, char type, unsigned int value);
 
 size_t	is_string(char type);
 char	*replace_string(char *format, char *value);
@@ -50,11 +50,11 @@ char	*replace_char(char *format, int value);
 size_t	is_percent(char type);
 char	*replace_percent(char *format);
 
-size_t	is_uinteger(char type);
-char	*replace_uinteger(char *format, unsigned int value);
+size_t	is_u_int(char type);
+char	*replace_u_int(char *format, unsigned int value);
 
-size_t	is_u_hexadecimal(char type);
-char	*replace_u_hexadecimal(char *format, char type, int value);
+size_t	is_u_hex(char type);
+char	*replace_u_hex(char *format, char type, int value);
 
 size_t	is_pointer(char type);
 char	*replace_pointer(char *format, unsigned long int value);
