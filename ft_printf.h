@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 02:52:40 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 16:35:27 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	free_ptr(char **ptr);
 char	*str_replace(const char *str, char *old_word, char *new_word);
 char	*ft_replace_flags(const char *format, va_list *ap);
 int		ft_print_parser_fd(const char *format);
+
+char	*ft_char_tostr(char c);
 
 void	ft_strrev(char *str);
 void	ft_str_toupper(char *str);

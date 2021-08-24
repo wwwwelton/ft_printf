@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/23 23:23:30 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 16:35:15 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,13 @@ void	ft_str_toupper(char *str)
 			*str -= 32;
 		str++;
 	}
+}
+
+char	*ft_char_tostr(char c)
+{
+	char	str[2];
+
+	str[0] = c;
+	str[1] = '\0';
+	return (ft_strdup(str));
 }
