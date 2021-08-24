@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 16:49:29 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 18:26:44 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,14 +86,20 @@ void	ft_strrev(char *str)
 	}
 }
 
-void	ft_str_toupper(char *str)
+int		ft_str_toupper(char *str)
 {
-	while (*str)
+	int	i;
+
+	if (!str)
+		return (-1);
+	i = 0;
+	while (str[i])
 	{
-		if (*str >= 'a' && *str <= 'z')
-			*str -= 32;
-		str++;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		i++;
 	}
+	return (i);
 }
 
 char	*ft_char_tostr(char c)

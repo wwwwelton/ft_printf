@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 18:18:39 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 18:27:23 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_print_parser_fd(const char *format);
 char	*ft_char_tostr(char c);
 
 void	ft_strrev(char *str);
-void	ft_str_toupper(char *str);
+int		ft_str_toupper(char *str);
 
 size_t	is_decimal(char type);
 char	*replace_decimal(char *format, char type, int value);
