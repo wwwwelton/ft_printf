@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 01:47:32 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 02:52:40 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 # define FT_PRINTF_H
 
 # define FD 1
-
 # define NULL_PATTERN "____[0x0]"
 # define PERCENT_PATTERN "____[0x25]"
 
-# include "libft.h"
+# include "./libft/libft.h"
 # include <stdarg.h>
 
 int		ft_printf(const char *format, ...);
