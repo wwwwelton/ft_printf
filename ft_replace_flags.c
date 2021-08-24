@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 01:55:27 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 17:02:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,22 @@ char	*ft_replace_flags(const char *format, va_list *ap)
 	fmt = ft_strdup(format);
 	while (*format)
 	{
-		if (is_char(format))
-			fmt = replace_char(fmt, va_arg(*ap, int));
-		else if (is_string(format))
-			fmt = replace_string(fmt, va_arg(*ap, char *));
-		else if (is_pointer(format))
-			fmt = replace_pointer(fmt, va_arg(*ap, unsigned long int));
-		else if (is_decimal(format))
-			fmt = replace_decimal(fmt, va_arg(*ap, int));
-		else if (is_uinteger(format))
-			fmt = replace_uinteger(fmt, va_arg(*ap, unsigned int));
-		else if (is_u_hexadecimal(format))
-			fmt = replace_u_hexadecimal(fmt, va_arg(*ap, unsigned int));
-		else if (is_percent(format))
-			fmt = replace_percent(fmt);
+		if (*format == '%')
+		{
+			format++;
+			if (*format == 's')
+				fmt = replace_string(fmt, va_arg(*ap, char *));
+			else if (*format == 'p')
+				fmt = replace_pointer(fmt, va_arg(*ap, unsigned long int));
+			else if (*format == 'c' || *format == 'd' || *format == 'i')
+				fmt = replace_c_d_i(fmt, *format, va_arg(*ap, int));
+			else if (*format == 'u')
+				fmt = replace_uinteger(fmt, va_arg(*ap, unsigned int));
+			else if (*format == 'x' || *format == 'X')
+				fmt = replace_u_hexadecimal(fmt, va_arg(*ap, unsigned int));
+			else if (*format == '%')
+				fmt = replace_percent(fmt);
+		}
 		format++;
 	}
 	return (fmt);
