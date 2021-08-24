@@ -4,8 +4,8 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 SOURCES			=	ft_convert_char.c ft_convert_decimal.c
 SOURCES			+=	ft_convert_percent.c ft_convert_pointer.c
 SOURCES			+=	ft_convert_string.c ft_convert_u_hexadecimal.c
-SOURCES			+=	ft_convert_uinteger.c ft_printf.c
-SOURCES			+=	ft_printf_utils.c ft_replace_flags.c
+SOURCES			+=	ft_convert_uinteger.c ft_printf.c ft_printf_utils.c
+SOURCES			+=	ft_replace_flags.c ft_replace_c_d_i.c
 
 OBJECTS			= 	$(SOURCES:.c=.o)
 
