@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 01:43:23 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 03:21:55 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 15:52:20 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ static int	u_count_digits(unsigned long int n)
 
 static char	*ul_ptoa(unsigned long int n)
 {
-	char				*base;
-	char				*res;
-	int	i;
+	char	*base;
+	char	*res;
+	int		i;
 
 	if (n == 0)
 		return (ft_strdup("0"));
