@@ -1,7 +1,7 @@
 LIBFT_PATH		=	./libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
-SOURCES			=	ft_convert_char.c ft_convert_decimal.c
+SOURCES			=	ft_convert_char.c ft_convert_decimal.c ft_convert_integer.c
 SOURCES			+=	ft_convert_percent.c ft_convert_pointer.c
 SOURCES			+=	ft_convert_string.c ft_convert_u_hexadecimal.c
 SOURCES			+=	ft_convert_uinteger.c ft_printf.c ft_printf_utils.c

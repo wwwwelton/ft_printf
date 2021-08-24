@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 18:27:23 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 18:34:20 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ void	ft_strrev(char *str);
 int		ft_str_toupper(char *str);
 
 size_t	is_decimal(char type);
-char	*replace_decimal(char *format, char type, int value);
+char	*replace_decimal(char *format, int value);
+size_t	is_integer(char type);
+char	*replace_integer(char *format, int value);
 
 size_t	is_ch_dec_int(char type);
 char	*replace_ch_dec_int(char *format, char type, int value);
