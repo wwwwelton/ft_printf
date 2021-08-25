@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handler_integer.c                                  :+:      :+:    :+:   */
+/*   convert_integer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 18:31:28 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 19:44:54 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 18:32:45 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*replace_integer(char *format, int value)
 
 	old_adress = format;
 	decimal = ft_itoa(value);
-	format = str_replace(old_adress, "%i", decimal);
-	free_ptr(&decimal);
-	free_ptr(&old_adress);
+	format = ft_str_replace(old_adress, "%i", decimal);
+	ft_free_ptr((void *)&decimal);
+	ft_free_ptr((void *)&old_adress);
 	return (format);
 }

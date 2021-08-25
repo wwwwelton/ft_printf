@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 15:48:04 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 18:27:14 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,12 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *format, ...);
-void	free_ptr(char **ptr);
-char	*str_replace(const char *str, char *old_word, char *new_word);
 char	*parse_flags(const char *format, va_list *ap);
 int		print_to_fd(const char *format, int fd);
 
-char	*ft_uitoa_base(size_t n, char *base);
-
-char	*ft_char_tostr(char c);
-
-void	ft_strrev(char *str);
-int		ft_str_toupper(char *str);
-
 size_t	is_decimal(char type);
 char	*replace_decimal(char *format, int value);
+
 size_t	is_integer(char type);
 char	*replace_integer(char *format, int value);
 

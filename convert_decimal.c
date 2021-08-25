@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handler_decimal.c                                  :+:      :+:    :+:   */
+/*   convert_decimal.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 19:44:54 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 18:32:32 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*replace_decimal(char *format, int value)
 
 	old_adress = format;
 	decimal = ft_itoa(value);
-	format = str_replace(old_adress, "%d", decimal);
-	free_ptr(&decimal);
-	free_ptr(&old_adress);
+	format = ft_str_replace(old_adress, "%d", decimal);
+	ft_free_ptr((void *)&decimal);
+	ft_free_ptr((void *)&old_adress);
 	return (format);
 }

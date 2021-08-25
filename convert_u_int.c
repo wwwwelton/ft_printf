@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 21:24:16 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 15:48:38 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 18:33:49 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*replace_u_int(char *format, unsigned int value)
 
 	old_adress = format;
 	uinteger = ft_uitoa_base(value, "0123456789");
-	format = str_replace(old_adress, "%u", uinteger);
-	free_ptr(&uinteger);
-	free_ptr(&old_adress);
+	format = ft_str_replace(old_adress, "%u", uinteger);
+	ft_free_ptr((void *)&uinteger);
+	ft_free_ptr((void *)&old_adress);
 	return (format);
 }

@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 01:43:23 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 15:48:30 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 18:33:05 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ char	*replace_pointer(char *format, unsigned long int value)
 		prefix = ft_strdup("0x0");
 	else
 		prefix = ft_strjoin("0x", pointer);
-	format = str_replace(old_adress, "%p", prefix);
-	free_ptr(&pointer);
-	free_ptr(&prefix);
-	free_ptr(&old_adress);
+	format = ft_str_replace(old_adress, "%p", prefix);
+	ft_free_ptr((void *)&pointer);
+	ft_free_ptr((void *)&prefix);
+	ft_free_ptr((void *)&old_adress);
 	return (format);
 }

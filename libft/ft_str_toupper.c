@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_percent.c                                  :+:      :+:    :+:   */
+/*   ft_str_toupper.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 18:32:58 by wleite           ###   ########.fr       */
+/*   Created: 2021/08/25 17:20:04 by wleite            #+#    #+#             */
+/*   Updated: 2021/08/25 17:20:42 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-size_t	is_percent(char type)
+int	ft_str_toupper(char *str)
 {
-	return (type == '%');
-}
+	int	i;
 
-char	*replace_percent(char *format)
-{
-	char	*old_address;
-	char	*percent;
-
-	old_address = format;
-	percent = ft_strdup(PERCENT_PATTERN);
-	format = ft_str_replace(old_address, "%%", percent);
-	ft_free_ptr((void *)&percent);
-	ft_free_ptr((void *)&old_address);
-	return (format);
+	if (!str)
+		return (-1);
+	i = 0;
+	while (*str)
+	{
+		if (*str >= 'a' && *str <= 'z')
+		{
+			*str -= 32;
+			i++;
+		}
+		str++;
+	}
+	return (i);
 }

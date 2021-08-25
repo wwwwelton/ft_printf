@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 19:25:46 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/07 02:05:21 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 18:30:10 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -498,5 +498,59 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
  * @param f  The adress of the function used to iterate on the list.
  */
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+/**
+ * @brief Deallocates the pointer memory address previously allocated
+ * by a call to calloc, malloc, or realloc.
+ *
+ * @param ptr This is the pointer address to a memory block previously
+ * allocated with malloc, calloc or realloc to be deallocated.
+ * If a null pointer is passed as argument, no action occurs.
+ */
+void	ft_free_ptr(void **ptr);
+
+/**
+ * @brief Searches for the first occurrence of the string
+ * old_word in the string str and replaces with the string new_word.
+ *
+ * @param str This is the C string to be scanned.
+ * @param old_word This is the string to be located inside str.
+ * @param new_word This is the string to be replaced inside str.
+ * @return Returns a new string with old_word replaced by new_word
+ * or a duplicate of the string pointed to by str in case old_word
+ * not found. If an error occurs, a null pointer is returned.
+ */
+char	*ft_str_replace(const char *str, char *old_word, char *new_word);
+
+/**
+ * @brief Converts lowercase letters of the string to uppercase.
+ *
+ * @param str This is the string to be converted to uppercase.
+ * @return Returns the number of characters changed. Returns -1
+ * if the string is NULL.
+ */
+int		ft_str_toupper(char *str);
+
+/**
+ * @brief Converts an unsigned char to a string allocated with malloc.
+ *
+ * @param c This is the unsigned char to be converted.
+ * @return Returns a string, allocated with malloc with the character
+ * passed to the parameter in the first position and '\\0' in the
+ * second position.
+ */
+char	*ft_char_tostr(unsigned char c);
+
+/**
+ * @brief Allocates with malloc and returns a string representing the
+ * number in the base received as an argument.
+ *
+ * @param n The number to convert.
+ * @param base This is the string representing which base the
+ * number will be converted to. Example "0123456789" for base 10.
+ * @return The string representing the number in the base passed as an
+ * argument. NULL if the allocation fails.
+ */
+char	*ft_uitoa_base(size_t n, char *base);
 
 #endif

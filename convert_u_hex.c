@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 15:48:34 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 18:33:42 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ char	*replace_u_hex(char *format, char type, unsigned int value)
 	if (type == 'x')
 	{
 		hexadecimal = ft_uitoa_base(value, "0123456789abcdef");
-		format = str_replace(old_adress, "%x", hexadecimal);
+		format = ft_str_replace(old_adress, "%x", hexadecimal);
 	}
 	if (type == 'X')
 	{
 		hexadecimal = ft_uitoa_base(value, "0123456789ABCDEF");
-		format = str_replace(old_adress, "%X", hexadecimal);
+		format = ft_str_replace(old_adress, "%X", hexadecimal);
 	}
-	free_ptr(&hexadecimal);
-	free_ptr(&old_adress);
+	ft_free_ptr((void *)&hexadecimal);
+	ft_free_ptr((void *)&old_adress);
 	return (format);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handler_string.c                                   :+:      :+:    :+:   */
+/*   convert_string.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 19:44:54 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 18:33:32 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ char	*replace_string(char *format, char *value)
 	else
 		string = ft_strdup(value);
 	old_adress = format;
-	format = str_replace(old_adress, "%s", string);
-	free_ptr(&string);
-	free_ptr(&old_adress);
+	format = ft_str_replace(old_adress, "%s", string);
+	ft_free_ptr((void *)&string);
+	ft_free_ptr((void *)&old_adress);
 	return (format);
 }
