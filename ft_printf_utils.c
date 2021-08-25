@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 20:54:11 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 21:12:57 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*str_replace(const char *str, char *old_word, char *new_word)
 	int		total_size;
 	int		i;
 
+	if (!str || !old_word || !new_word)
+		return (NULL);
 	total_size = ft_strlen(str) - ft_strlen(old_word) + ft_strlen(new_word) + 1;
 	new_str = (char *)ft_calloc(total_size, sizeof(char *));
 	if (!new_str)
