@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 21:12:57 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/24 21:14:47 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	free_ptr(char **ptr)
 {
-	free(*ptr);
+	if (*ptr)
+		free(*ptr);
 	*ptr = NULL;
 }
 
