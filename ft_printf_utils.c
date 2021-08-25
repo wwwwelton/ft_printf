@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 22:09:54 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 01:00:24 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ char	*str_replace(const char *str, char *old_word, char *new_word)
 	if (!new_str)
 		return (NULL);
 	i = 0;
-	ptr = ft_strnstr(str + i, old_word, ft_strlen(str));
+	ptr = ft_strnstr(str, old_word, ft_strlen(str));
 	if (ptr)
 	{
-		ft_strlcpy(new_str + ft_strlen(new_str), str + i, (ptr - str) - i + 1);
+		ft_strlcpy(new_str, str, (ptr - str) + 1);
 		ft_strlcat(new_str, new_word, total_size);
 		i = (ptr - str) + ft_strlen(old_word);
 	}
