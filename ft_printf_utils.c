@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 01:08:28 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 15:47:49 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,9 +119,9 @@ char	*ft_char_tostr(char c)
 	return (ft_strdup(str));
 }
 
-static int	ft_count_digits(unsigned long long int n)
+static size_t	ft_count_digits(size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (n < 0)
@@ -137,7 +137,7 @@ static int	ft_count_digits(unsigned long long int n)
 	return (i);
 }
 
-char	*ft_lluitoa_base(unsigned long long int n, char *base)
+char	*ft_uitoa_base(size_t n, char *base)
 {
 	char	*str;
 	size_t	base_len;

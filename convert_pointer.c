@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handler_pointer.c                                  :+:      :+:    :+:   */
+/*   convert_pointer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 01:43:23 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 20:50:47 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 15:48:30 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*replace_pointer(char *format, unsigned long int value)
 	char	*prefix;
 
 	old_adress = format;
-	pointer = ft_lluitoa_base(value, "0123456789abcdef");
+	pointer = ft_uitoa_base(value, "0123456789abcdef");
 	if (value == 0)
 		prefix = ft_strdup("0x0");
 	else
