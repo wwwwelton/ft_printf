@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 01:00:24 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 01:08:28 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*str_replace(const char *str, char *old_word, char *new_word)
 	return (new_str);
 }
 
-int	ft_print_parser_fd(const char *format)
+int	print_to_fd(const char *format, int fd)
 {
 	int	bytes_write;
 
@@ -53,17 +53,17 @@ int	ft_print_parser_fd(const char *format)
 	{
 		if (ft_strnstr(format, NULL_PATTERN, 9))
 		{
-			bytes_write += write(FD, "\0", 1);
+			bytes_write += write(fd, "\0", 1);
 			format += 9;
 			continue ;
 		}
 		if (ft_strnstr(format, PERCENT_PATTERN, 10))
 		{
-			bytes_write += write(FD, "%", 1);
+			bytes_write += write(fd, "%", 1);
 			format += 10;
 			continue ;
 		}
-		bytes_write += write(FD, format, 1);
+		bytes_write += write(fd, format, 1);
 		format++;
 	}
 	return (bytes_write);

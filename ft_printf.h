@@ -6,14 +6,13 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 20:50:05 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 01:10:45 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# define FD 1
 # define NULL_PATTERN "____[0x0]"
 # define PERCENT_PATTERN "____[0x25]"
 
@@ -23,8 +22,8 @@
 int		ft_printf(const char *format, ...);
 void	free_ptr(char **ptr);
 char	*str_replace(const char *str, char *old_word, char *new_word);
-char	*ft_parse_flags(const char *format, va_list *ap);
-int		ft_print_parser_fd(const char *format);
+char	*parse_flags(const char *format, va_list *ap);
+int		print_to_fd(const char *format, int fd);
 
 char	*ft_lluitoa_base(unsigned long long int n, char *base);
 

@@ -6,13 +6,13 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/24 19:44:54 by wleite           ###   ########.fr       */
+/*   Updated: 2021/08/25 01:10:26 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_parse_flags(const char *format, va_list *ap)
+char	*parse_flags(const char *format, va_list *ap)
 {
 	char	*fmt;
 
