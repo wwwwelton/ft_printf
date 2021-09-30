@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 18:33:32 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/29 20:44:39 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,13 @@ size_t	is_string(char type)
 
 char	*replace_string(char *format, char *value)
 {
-	char	*old_adress;
 	char	*string;
 
 	if (!value)
 		string = ft_strdup("(null)");
 	else
 		string = ft_strdup(value);
-	old_adress = format;
-	format = ft_str_replace(old_adress, "%s", string);
+	format = ft_str_replace(format, "%s", string);
 	ft_free_ptr((void *)&string);
-	ft_free_ptr((void *)&old_adress);
 	return (format);
 }
