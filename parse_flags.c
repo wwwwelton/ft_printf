@@ -6,11 +6,32 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 01:10:26 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/09 03:15:53 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void	*replace_flags(char flag, char *fmt, va_list *ap)
+{
+	if (is_string(flag))
+		fmt = replace_string(fmt, va_arg(*ap, char *));
+	else if (is_pointer(flag))
+		fmt = replace_pointer(fmt, va_arg(*ap, unsigned long int));
+	else if (is_char(flag))
+		fmt = replace_char(fmt, va_arg(*ap, int));
+	else if (is_decimal(flag))
+		fmt = replace_decimal(fmt, va_arg(*ap, int));
+	else if (is_integer(flag))
+		fmt = replace_integer(fmt, va_arg(*ap, int));
+	else if (is_u_int(flag))
+		fmt = replace_u_int(fmt, va_arg(*ap, unsigned int));
+	else if (is_u_hex(flag))
+		fmt = replace_u_hex(fmt, flag, va_arg(*ap, unsigned int));
+	else if (is_percent(flag))
+		fmt = replace_percent(fmt);
+	return (fmt);
+}
 
 char	*parse_flags(const char *format, va_list *ap)
 {
@@ -22,16 +43,7 @@ char	*parse_flags(const char *format, va_list *ap)
 		if (*format == '%')
 		{
 			format++;
-			if (is_string(*format))
-				fmt = replace_string(fmt, va_arg(*ap, char *));
-			else if (is_pointer(*format))
-				fmt = replace_pointer(fmt, va_arg(*ap, unsigned long int));
-			else if (is_ch_dec_int(*format))
-				fmt = parse_ch_dec_int(fmt, *format, va_arg(*ap, int));
-			else if (is_u_int_hex(*format))
-				fmt = parse_u_int_hex(fmt, *format, va_arg(*ap, unsigned int));
-			else if (is_percent(*format))
-				fmt = replace_percent(fmt);
+			fmt = replace_flags(*format, fmt, ap);
 		}
 		format++;
 	}

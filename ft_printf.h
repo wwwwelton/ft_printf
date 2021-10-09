@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 18:27:14 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/07 23:48:32 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@ char	*replace_decimal(char *format, int value);
 
 size_t	is_integer(char type);
 char	*replace_integer(char *format, int value);
-
-size_t	is_ch_dec_int(char type);
-char	*parse_ch_dec_int(char *format, char type, int value);
-
-size_t	is_u_int_hex(char type);
-char	*parse_u_int_hex(char *format, char type, unsigned int value);
 
 size_t	is_string(char type);
 char	*replace_string(char *format, char *value);
