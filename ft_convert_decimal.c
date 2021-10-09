@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_u_hex.c                                    :+:      :+:    :+:   */
+/*   convert_decimal.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/29 20:44:50 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/09 16:06:14 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	is_u_hex(char type)
+char	*replace_decimal(char *format, int value)
 {
-	return (type == 'x' || type == 'X');
-}
+	char	*decimal;
 
-char	*replace_u_hex(char *format, char type, unsigned int value)
-{
-	char	*hexadecimal;
-
-	if (type == 'x')
-	{
-		hexadecimal = ft_uitoa_base(value, "0123456789abcdef");
-		format = ft_str_replace(format, "%x", hexadecimal);
-	}
-	if (type == 'X')
-	{
-		hexadecimal = ft_uitoa_base(value, "0123456789ABCDEF");
-		format = ft_str_replace(format, "%X", hexadecimal);
-	}
-	ft_free_ptr((void *)&hexadecimal);
+	decimal = ft_itoa(value);
+	format = ft_str_replace(format, "%d", decimal);
+	ft_free_ptr((void *)&decimal);
 	return (format);
 }

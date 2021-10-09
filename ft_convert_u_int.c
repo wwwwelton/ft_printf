@@ -6,16 +6,11 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 21:24:16 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/29 20:45:04 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/09 16:06:59 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-size_t	is_u_int(char type)
-{
-	return (type == 'u');
-}
 
 char	*replace_u_int(char *format, unsigned int value)
 {

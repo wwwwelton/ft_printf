@@ -6,29 +6,29 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/09 03:15:53 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/09 16:09:36 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	*replace_flags(char flag, char *fmt, va_list *ap)
+static void	*parse_types(char type, char *fmt, va_list *ap)
 {
-	if (is_string(flag))
+	if (type == 's')
 		fmt = replace_string(fmt, va_arg(*ap, char *));
-	else if (is_pointer(flag))
+	else if (type == 'p')
 		fmt = replace_pointer(fmt, va_arg(*ap, unsigned long int));
-	else if (is_char(flag))
+	else if (type == 'c')
 		fmt = replace_char(fmt, va_arg(*ap, int));
-	else if (is_decimal(flag))
+	else if (type == 'd')
 		fmt = replace_decimal(fmt, va_arg(*ap, int));
-	else if (is_integer(flag))
+	else if (type == 'i')
 		fmt = replace_integer(fmt, va_arg(*ap, int));
-	else if (is_u_int(flag))
+	else if (type == 'u')
 		fmt = replace_u_int(fmt, va_arg(*ap, unsigned int));
-	else if (is_u_hex(flag))
-		fmt = replace_u_hex(fmt, flag, va_arg(*ap, unsigned int));
-	else if (is_percent(flag))
+	else if (type == 'x' || type == 'X')
+		fmt = replace_u_hex(fmt, type, va_arg(*ap, unsigned int));
+	else if (type == '%')
 		fmt = replace_percent(fmt);
 	return (fmt);
 }
@@ -43,7 +43,7 @@ char	*parse_flags(const char *format, va_list *ap)
 		if (*format == '%')
 		{
 			format++;
-			fmt = replace_flags(*format, fmt, ap);
+			fmt = parse_types(*format, fmt, ap);
 		}
 		format++;
 	}

@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_integer.c                                  :+:      :+:    :+:   */
+/*   convert_percent.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/24 18:31:28 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/29 20:43:42 by wleite           ###   ########.fr       */
+/*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
+/*   Updated: 2021/10/09 16:06:26 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	is_integer(char type)
+char	*replace_percent(char *format)
 {
-	return (type == 'i');
-}
+	char	*percent;
 
-char	*replace_integer(char *format, int value)
-{
-	char	*decimal;
-
-	decimal = ft_itoa(value);
-	format = ft_str_replace(format, "%i", decimal);
-	ft_free_ptr((void *)&decimal);
+	percent = ft_strdup(PERCENT_PATTERN);
+	format = ft_str_replace(format, "%%", percent);
+	ft_free_ptr((void *)&percent);
 	return (format);
 }

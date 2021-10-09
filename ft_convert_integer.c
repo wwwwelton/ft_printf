@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_string.c                                   :+:      :+:    :+:   */
+/*   convert_integer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/29 20:44:39 by wleite           ###   ########.fr       */
+/*   Created: 2021/08/24 18:31:28 by wleite            #+#    #+#             */
+/*   Updated: 2021/10/09 16:06:19 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	is_string(char type)
+char	*replace_integer(char *format, int value)
 {
-	return (type == 's');
-}
+	char	*decimal;
 
-char	*replace_string(char *format, char *value)
-{
-	char	*string;
-
-	if (!value)
-		string = ft_strdup("(null)");
-	else
-		string = ft_strdup(value);
-	format = ft_str_replace(format, "%s", string);
-	ft_free_ptr((void *)&string);
+	decimal = ft_itoa(value);
+	format = ft_str_replace(format, "%i", decimal);
+	ft_free_ptr((void *)&decimal);
 	return (format);
 }
