@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 01:11:59 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/10 03:33:10 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,8 @@ char	*replace_u_hex(char *format, char type, unsigned int value);
 char	*replace_pointer(char *format, unsigned long int value);
 
 void	debug(t_args *args);
+
+
+char	*ft_char_to_str(char c, size_t len);
 
 #endif
