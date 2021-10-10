@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:02:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 18:34:06 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/10 01:12:10 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	ap;
+	int		len;
 	char	*fmt;
-	int		fmt_len;
+	va_list	ap;
 
 	va_start(ap, format);
-	fmt = parse_flags(format, &ap);
+	fmt = parse_args(format, &ap);
 	va_end(ap);
-	fmt_len = print_to_fd(fmt, 1);
+	len = print_to_fd(fmt, 1);
 	ft_free_ptr((void *)&fmt);
-	return (fmt_len);
+	return (len);
 }

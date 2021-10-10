@@ -6,11 +6,32 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/08/25 18:26:45 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/10 01:02:31 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	init_args(t_args *args, size_t size)
+{
+	args->i = 0;
+	args->j = 0;
+	args->hash = 0;
+	args->minus = 0;
+	args->plus = 0;
+	args->space = 0;
+	args->zero = 0;
+	args->len = 0;
+	args->width = 0;
+	args->precision = -1;
+	args->type = 0;
+	args->argument = ft_calloc(size + 1, sizeof(char));
+}
+
+void	deinit_args(t_args *args)
+{
+	ft_free_ptr((void *)&args->argument);
+}
 
 int	print_to_fd(const char *format, int fd)
 {

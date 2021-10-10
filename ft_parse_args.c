@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_flags.c                                      :+:      :+:    :+:   */
+/*   ft_parse_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/09 16:09:36 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/10 01:13:04 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	*parse_types(char type, char *fmt, va_list *ap)
+static void	*parse_types(char type, char *fmt, va_list *ap, t_args *args)
 {
+	(void)args;
 	if (type == 's')
 		fmt = replace_string(fmt, va_arg(*ap, char *));
 	else if (type == 'p')
@@ -33,17 +34,22 @@ static void	*parse_types(char type, char *fmt, va_list *ap)
 	return (fmt);
 }
 
-char	*parse_flags(const char *format, va_list *ap)
+char	*parse_args(const char *format, va_list *ap)
 {
 	char	*fmt;
+	size_t	size;
+	t_args	args;
 
 	fmt = ft_strdup(format);
+	size = ft_strlen(format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
-			format++;
-			fmt = parse_types(*format, fmt, ap);
+			init_args(&args, size);
+			format += get_args(&args, format, ap);
+			fmt = parse_types(*format, fmt, ap, &args);
+			deinit_args(&args);
 		}
 		format++;
 	}
