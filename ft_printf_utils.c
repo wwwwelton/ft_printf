@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 02:58:05 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/10 06:12:59 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	init_args(t_args *args, size_t size)
 {
 	args->i = 0;
 	args->j = 0;
+	args->negative = 0;
 	args->hash = 0;
 	args->minus = 0;
 	args->plus = 0;
@@ -69,5 +70,27 @@ char	*ft_char_to_str(char c, size_t len)
 		return (NULL);
 	ft_memset(str, c, len);
 	str[len] = '\0';
+	return (str);
+}
+
+char	*ft_strmerge(char *s1, char *s2)
+{
+	char	*str;
+	size_t	size;
+
+	if (!s1 || !s2)
+	{
+		ft_free_ptr((void *)&s1);
+		ft_free_ptr((void *)&s2);
+		return (NULL);
+	}
+	size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = (char *)malloc(sizeof(char) * size);
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s1, ft_strlen(s1) + 1);
+	ft_strlcat(str, s2, size);
+	ft_free_ptr((void *)&s1);
+	ft_free_ptr((void *)&s2);
 	return (str);
 }
