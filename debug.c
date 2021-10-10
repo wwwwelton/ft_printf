@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 00:54:31 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/10 06:08:50 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	debug(t_args *args)
 {
 	printf("\n\n--------------");
+	printf("\nnegative: %d\n", args->negative);
 	printf("hash: %d\n", args->hash);
 	printf("minus: %d\n", args->minus);
 	printf("plus: %d\n", args->plus);

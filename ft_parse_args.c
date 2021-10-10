@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 03:48:46 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/10 04:19:11 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	*parse_types(char type, char *fmt, va_list *ap, t_args *args)
 	else if (type == 'c')
 		fmt = replace_char(fmt, va_arg(*ap, int), args);
 	else if (type == 'd')
-		fmt = replace_decimal(fmt, va_arg(*ap, int));
+		fmt = replace_decimal(fmt, va_arg(*ap, int), args);
 	else if (type == 'i')
 		fmt = replace_integer(fmt, va_arg(*ap, int));
 	else if (type == 'u')

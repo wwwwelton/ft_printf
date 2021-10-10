@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 03:57:52 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/10 06:13:15 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_args
 {
 	int		i;
 	int		j;
+	int		negative;
 	int		hash;
 	int		minus;
 	int		plus;
@@ -45,7 +46,7 @@ void	deinit_args(t_args *args);
 
 int		get_args(t_args *args, const char *format, va_list *ap);
 
-char	*replace_decimal(char *format, int value);
+char	*replace_decimal(char *format, int value, t_args *args);
 char	*replace_integer(char *format, int value);
 char	*replace_string(char *format, char *value, t_args *args);
 char	*replace_char(char *format, int value, t_args *args);
@@ -57,5 +58,7 @@ char	*replace_pointer(char *format, unsigned long int value);
 void	debug(t_args *args);
 
 char	*ft_char_to_str(char c, size_t len);
+
+char	*ft_strmerge(char *s1, char *s2);
 
 #endif
