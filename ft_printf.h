@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 03:35:28 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/10 03:57:52 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,13 @@ int		get_args(t_args *args, const char *format, va_list *ap);
 char	*replace_decimal(char *format, int value);
 char	*replace_integer(char *format, int value);
 char	*replace_string(char *format, char *value, t_args *args);
-char	*replace_char(char *format, int value);
+char	*replace_char(char *format, int value, t_args *args);
 char	*replace_percent(char *format);
 char	*replace_u_int(char *format, unsigned int value);
 char	*replace_u_hex(char *format, char type, unsigned int value);
 char	*replace_pointer(char *format, unsigned long int value);
 
 void	debug(t_args *args);
-
 
 char	*ft_char_to_str(char c, size_t len);
 
