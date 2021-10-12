@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 05:07:01 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 11:03:21 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	init_args(t_args *args)
 	args->plus = 0;
 	args->space = 0;
 	args->zero = 0;
-	args->len = 0;
 	args->width = 0;
 	args->dot = 0;
 	args->precision = -1;

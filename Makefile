@@ -5,7 +5,7 @@ SOURCES			=	ft_convert_char.c ft_convert_decimal.c ft_convert_integer.c
 SOURCES			+=	ft_convert_percent.c ft_convert_pointer.c
 SOURCES			+=	ft_convert_string.c ft_convert_u_hex.c
 SOURCES			+=	ft_convert_u_int.c ft_parse_args.c
-SOURCES			+=	ft_printf_utils.c ft_printf.c ft_parse_utils.c debug.c
+SOURCES			+=	ft_printf_utils.c ft_printf.c ft_parse_utils.c
 
 OBJECTS			= 	$(SOURCES:.c=.o)
 

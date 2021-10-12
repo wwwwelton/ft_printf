@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 05:03:17 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 11:04:02 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ static void	get_precision(t_args *args, const char **format, va_list *ap)
 			{
 				args->precision = (args->precision * 10) + (**format - '0');
 				*args->argument++ = *(*format)++;
-				args->len++;
 			}
 		}
 		else if (**format == '*')
@@ -91,6 +90,5 @@ int	get_args(t_args *args, const char *format, va_list *ap)
 	*args->argument = *format;
 	args->type = *format;
 	args->argument = old_address;
-	args->len = ft_strlen(args->argument);
-	return (args->len - 1);
+	return (ft_strlen(args->argument) - 1);
 }
