@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 11:12:38 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 12:13:49 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,5 @@ int		get_args(t_args *args, const char *format, va_list *ap);
 int		print_to_fd(const char *format, int fd);
 void	deinit_args(t_args *args);
 void	init_args(t_args *args);
-
-char	*ft_char_to_str(char c, size_t len);
-char	*ft_strmerge(char *s1, char *s2);
 
 #endif
