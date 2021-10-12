@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 03:56:14 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 11:32:33 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static char	*apply_width(char *ch, t_args *args)
 {
-	char	*tmp;
 	char	*width;
 
 	args->width -= 1;
@@ -22,12 +21,9 @@ static char	*apply_width(char *ch, t_args *args)
 	{
 		width = ft_char_to_str(' ', args->width);
 		if (args->minus)
-			tmp = ft_strjoin(ch, width);
+			ch = ft_strmerge(ch, width);
 		else
-			tmp = ft_strjoin(width, ch);
-		ft_free_ptr((void *)&ch);
-		ft_free_ptr((void *)&width);
-		return (tmp);
+			ch = ft_strmerge(width, ch);
 	}
 	return (ch);
 }
