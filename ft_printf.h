@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 08:47:58 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 10:28:13 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # define NULL_PATTERN "____[0x0]"
 # define PERCENT_PATTERN "____[0x25]"
+
+# if __APPLE__
+#  define IS_MACOS 1
+# else
+#  define IS_MACOS 0
+# endif
 
 # include "./libft/libft.h"
 # include <stdarg.h>
