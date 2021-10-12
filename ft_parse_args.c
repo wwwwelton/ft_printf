@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 06:13:08 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 06:17:30 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	*parse_types(char type, char *fmt, va_list *ap, t_args *args)
 	if (type == 's')
 		fmt = replace_string(fmt, va_arg(*ap, char *), args);
 	else if (type == 'p')
-		fmt = replace_pointer(fmt, va_arg(*ap, unsigned long int));
+		fmt = replace_pointer(fmt, va_arg(*ap, unsigned long int), args);
 	else if (type == 'c')
 		fmt = replace_char(fmt, va_arg(*ap, int), args);
 	else if (type == 'd')
