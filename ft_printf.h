@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 08:07:55 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 08:47:58 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*replace_integer(char *format, int value, t_args *args);
 char	*replace_string(char *format, char *value, t_args *args);
 char	*replace_char(char *format, int value, t_args *args);
 char	*replace_percent(char *format);
-char	*replace_u_int(char *format, unsigned int value);
+char	*replace_u_int(char *format, unsigned int value, t_args *args);
 char	*replace_u_hex(char *format, unsigned int value, t_args *args);
 char	*replace_pointer(char *format, unsigned long int value, t_args *args);
 
