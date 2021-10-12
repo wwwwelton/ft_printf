@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 06:03:07 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 06:13:15 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/11 09:38:18 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_args
 	int		zero;
 	int		len;
 	int		width;
+	int		dot;
 	int		precision;
 	char	type;
 	char	*argument;

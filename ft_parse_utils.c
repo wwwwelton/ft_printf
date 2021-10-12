@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 01:17:56 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/11 09:39:05 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ static void	get_precision(t_args *args, const char *format, va_list *ap)
 	if (format[args->i] == '.')
 	{
 		args->argument[args->j++] = '.';
+		args->dot = 1;
 		args->precision = 0;
 		args->i++;
 		if (ft_isdigit(format[args->i]))

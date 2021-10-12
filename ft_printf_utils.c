@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 06:12:59 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/11 09:38:01 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	init_args(t_args *args, size_t size)
 	args->zero = 0;
 	args->len = 0;
 	args->width = 0;
+	args->dot = 0;
 	args->precision = -1;
 	args->type = 0;
 	args->argument = ft_calloc(size + 1, sizeof(char));
