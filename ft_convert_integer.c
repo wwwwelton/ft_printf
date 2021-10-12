@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 06:13:50 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 09:57:47 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ static char	*apply_flags(char *integer, t_args *args)
 	return (integer);
 }
 
-static char	*apply_width(char *integer, int value, t_args *args)
+static char	*apply_width(char *integer, t_args *args)
 {
 	char	padding;
 	char	*width;
 
-	if (args->zero && value != 0 && args->precision <= 0 && !args->dot)
+	if (args->zero && args->precision != 0 && !args->dot)
 	{
 		integer = delete_minus(integer, args);
 		padding = '0';
@@ -92,7 +92,7 @@ char	*replace_integer(char *format, int value, t_args *args)
 
 	integer = ft_itoa(value);
 	integer = apply_precision(integer, value, args);
-	integer = apply_width(integer, value, args);
+	integer = apply_width(integer, args);
 	integer = apply_flags(integer, args);
 	format = ft_str_replace(format, args->argument, integer);
 	ft_free_ptr((void *)&integer);

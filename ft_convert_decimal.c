@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 06:06:14 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 09:57:07 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ static char	*apply_flags(char *decimal, t_args *args)
 	return (decimal);
 }
 
-static char	*apply_width(char *decimal, int value, t_args *args)
+static char	*apply_width(char *decimal, t_args *args)
 {
 	char	padding;
 	char	*width;
 
-	if (args->zero && value != 0 && args->precision <= 0 && !args->dot)
+	if (args->zero && args->precision != 0 && !args->dot)
 	{
 		decimal = delete_minus(decimal, args);
 		padding = '0';
@@ -92,7 +92,7 @@ char	*replace_decimal(char *format, int value, t_args *args)
 
 	decimal = ft_itoa(value);
 	decimal = apply_precision(decimal, value, args);
-	decimal = apply_width(decimal, value, args);
+	decimal = apply_width(decimal, args);
 	decimal = apply_flags(decimal, args);
 	format = ft_str_replace(format, args->argument, decimal);
 	ft_free_ptr((void *)&decimal);
