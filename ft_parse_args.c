@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 02:24:09 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/10 04:19:11 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 05:04:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,14 @@ static void	*parse_types(char type, char *fmt, va_list *ap, t_args *args)
 char	*parse_args(const char *format, va_list *ap)
 {
 	char	*fmt;
-	size_t	size;
 	t_args	args;
 
 	fmt = ft_strdup(format);
-	size = ft_strlen(format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
-			init_args(&args, size);
+			init_args(&args);
 			format += get_args(&args, format, ap);
 			fmt = parse_types(*format, fmt, ap, &args);
 			deinit_args(&args);
