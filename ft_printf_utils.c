@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 01:53:59 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 11:03:21 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/12 11:59:30 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,6 @@ int	print_to_fd(const char *format, int fd)
 		format++;
 	}
 	return (bytes_write);
-}
-
-char	*ft_char_to_str(char c, size_t len)
-{
-	char	*str;
-
-	if (len < 0)
-		return (NULL);
-	str = (char *)malloc(sizeof(char) * len + 1);
-	if (!str)
-		return (NULL);
-	ft_memset(str, c, len);
-	str[len] = '\0';
-	return (str);
 }
 
 char	*ft_strmerge(char *s1, char *s2)
