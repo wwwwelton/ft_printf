@@ -34,7 +34,7 @@ $(NAME):			$(LIBFT) $(OBJ_DIR) $(OBJECTS) $(HEADER)
 					$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
 
 $(LIBFT):
-					$(MAKE) -C $(LIBFT_PATH)
+					$(MAKE) -C $(LIBFT_PATH) bonus
 
 $(OBJ_DIR):
 					mkdir -p $(OBJ_DIR)
