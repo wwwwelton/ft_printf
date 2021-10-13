@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 02:11:13 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 09:57:47 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/13 09:56:24 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static char	*apply_precision(char *integer, int value, t_args *args)
 {
 	char	*precision;
 
-	if (args->precision == 0 && value == 0)
+	if (value == 0 && args->precision <= 0 && args->dot)
 	{
 		ft_free_ptr((void *)&integer);
 		return (ft_strdup(""));
