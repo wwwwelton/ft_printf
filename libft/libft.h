@@ -6,17 +6,31 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 19:25:46 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 12:09:30 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/01 14:44:54 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <limits.h>
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
+
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
+
+# ifndef FALSE
+#  define FALSE 0
+# endif
+
+# ifndef TRUE
+#  define TRUE 1
+# endif
 
 # ifndef OPEN_MAX
 #  define OPEN_MAX 256
@@ -581,5 +595,15 @@ char	*ft_get_next_line(int fd);
  * @return The new string. NULL if the allocation fails.
  */
 char	*ft_strmerge(char *s1, char *s2);
+
+/**
+ * @brief Converts the string argument nptr to a long integer (type long int).
+ *
+ * @param nptr This is the string representation of an integral number.
+ * @return This function returns the converted integral number
+ * as a long int value.
+ * If no valid conversion could be performed, it returns zero.
+ */
+long	ft_atol(const char *nptr);
 
 #endif
