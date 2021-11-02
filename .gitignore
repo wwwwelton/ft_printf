@@ -5,6 +5,3 @@ main.c
 *.o
 printfTester
 ft_printf_tester
-images
-README.md
-license
